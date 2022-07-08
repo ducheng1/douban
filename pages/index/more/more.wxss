@@ -1,0 +1,15 @@
+/* pages/index/more/more.wxss */
+.more_itemList {
+  display: flex;
+  flex-direction: column;
+  height: 380rpx;
+}
+
+.more_itemList text {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200rpx;
+  font-size: 28rpx;
+}

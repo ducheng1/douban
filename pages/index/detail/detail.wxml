@@ -1,0 +1,18 @@
+<!--pages/index/detail/detail.wxml-->
+<view class="container">
+  <view class="mainContent">
+    <van-image width="135" height="188" src="{{detail.img}}" radius="10"></van-image>
+    <view class="mainInfo" style="margin-top: 30rpx;">
+      <text style="font-size: 50rpx; margin-bottom: 10rpx;">{{detail.name}}</text>
+      <text style="font-size: 26rpx; color: #666;margin-bottom: 40rpx;">{{detail.type}}</text>
+      <view>
+        <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="add-o" style="margin-right: 20rpx">想看</van-button>
+        <van-button color="linear-gradient(to left, #4bb0ff, #6149f6)" icon="certificate">看过</van-button>
+      </view>
+      <view style="margin-top: 30rpx;">
+        <van-rate allow-half readonly color="#ffd21e" void-color="#eee" value="{{detail.rating/2+0.5}}" style="margin-right: 10rpx;"></van-rate>
+        <text>{{detail.rating}}</text>
+      </view>
+    </view>
+  </view>
+</view>

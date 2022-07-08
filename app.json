@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/list/list",
+    "pages/index/search/search",
+    "pages/index/more/more",
+    "pages/index/detail/detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#42bd56",
+    "navigationBarTitleText": "豆瓣评分"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-rate": "@vant/weapp/rate/index"
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "dist/icons/home.png",
+        "selectedIconPath": "dist/icons/home_selected.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "榜单",
+        "iconPath": "dist/icons/ranking-list.png",
+        "selectedIconPath": "dist/icons/ranking-list_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "dist/icons/user.png",
+        "selectedIconPath": "dist/icons/user_selected.png"
+      }
+    ]
+  }
+}

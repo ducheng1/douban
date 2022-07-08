@@ -1,0 +1,31 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 搜索栏 -->
+  <van-search background="#42bd56" placeholder="搜索" input-align="center" disabled bind:click-input="searchOnClick"></van-search>
+  <!-- 主要内容 -->
+  <view class="itemContainer" wx:for="{{list}}" wx:key="index" wx:for-item="item">
+    <!-- 标题 -->
+    <view class="itemTitle">
+      <text>{{item.title}}</text>
+      <text style="color: #42bd56" bindtap="moreHandler" data-title="{{item.title}}" data-id="{{item.id}}">查看更多 ></text>
+    </view>
+    <!-- 列表 -->
+    <view class="itemList">
+      <view wx:for="{{item.data}}" wx:for-item="item" wx:key="index" class="listItem">
+        <view data-item="{{item}}" bindtap="detailHandler" class="listItem">
+          <!-- 封面图 -->
+          <van-image height="135" width="100" src="{{item.img}}" radius="10" lazy-load>
+          </van-image>
+          <text>{{item.name}}</text>
+          <!-- 评分展示 -->
+          <view wx:if="{{item.rating != ''}}" style="text-align: left;">
+            <van-rate readonly color="#ffd21e" void-color="#eee" value="{{item.rating/2+0.5}}" size="12" gutter="0" allow-half></van-rate>
+            <text style="font-size: 20rpx; margin-left: 10rpx;color: #666;">{{item.rating}}</text>
+          </view>
+          <text wx:else style="font-size: 20rpx;margin-top: 10rpx;color: #666;">暂无评分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- END OF 主要内容 -->
+</view>

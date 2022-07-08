@@ -1,0 +1,19 @@
+/* pages/index/detail/detail.wxss */
+.container {
+  width: 100%;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+}
+
+.mainContent .van-image {
+  margin-right: 20rpx;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+}

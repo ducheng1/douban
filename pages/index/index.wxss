@@ -1,0 +1,42 @@
+/*index.wxss*/
+.itemContainer {
+  height: 400rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  /* border: 1px solid black; */
+}
+
+.itemContainer .itemTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.listItem {
+  width: 200rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+
+.listItem:last-child{
+  margin-right: 0;
+}
+
+.listItem text {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 200rpx;
+  font-size: 28rpx;
+}
