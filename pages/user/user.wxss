@@ -1,0 +1,31 @@
+.userContainer {
+  height: 400rpx;
+  background-color: #3D8140;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.van-button {
+  width: 360rpx;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 38rpx;
+}
+
+.mainContent .mainTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 32rpx;
+  align-items: center;
+  margin-right: 20rpx;
+}

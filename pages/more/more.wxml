@@ -1,9 +1,9 @@
 <!--pages/index/more/more.wxml-->
 <view class="more_container">
-  <van-grid column-num="3">
-    <van-grid-item wx:for="{{list}}" wx:for-item="item" wx:key="index" use-slot>
+  <van-grid column-num="3" border="false">
+    <van-grid-item wx:for="{{list}}" wx:for-item="item" wx:key="index" use-slot >
       <!-- 列表 -->
-      <view class="more_itemList">
+      <view class="more_itemList" data-item="{{item}}" bindtap="detailHandler">
         <!-- 封面图 -->
         <van-image height="135" width="100" src="{{item.img}}" radius="10" lazy-load>
         </van-image>

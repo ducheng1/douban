@@ -1,0 +1,15 @@
+/* pages/seen/seen.wxss */
+.container {
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 80rpx;
+}
+
+.text {
+  border: 1px solid lightgray;
+  width: 90%;
+  padding: 20rpx;
+  border-radius: 3%;
+}

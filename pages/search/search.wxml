@@ -1,0 +1,4 @@
+<view class="container">
+  <van-search background="#42bd56" placeholder="搜索"></van-search>
+  <text style="font-size: 20rpx; color: #888; margin-top: 10rpx;">什么都没有哦~</text>
+</view>

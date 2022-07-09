@@ -1,34 +1,24 @@
-import {
-  indexData
-} from "../../../data/douban"
-
-// pages/index/more/more.js
+// pages/collect/collect.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(e) {
-    // console.log(e.id);
-    // console.log(indexData[index].contentList);
-    this.setData({
-      list: indexData[e.id].contentList,
-    });
+  onLoad(options) {
     wx.setNavigationBarTitle({
-      title: e.title,
+      title: "想看",
     });
     wx.setNavigationBarColor({
       backgroundColor: '#ffffff',
       frontColor: '#000000',
     });
-    console.log(this.data.list);
   },
 
   /**

@@ -1,3 +1,17 @@
 <view class="container">
-  <text>我的</text>
+  <view class="userContainer">
+    <van-button round wx:if="{{!isLogin}}" bindtap="getUserInfo">登录</van-button>
+    <view wx:else class="userInfo">
+      <van-image height="80" width="80" round src="{{img}}"></van-image>
+      <text style="margin-top: 10rpx;">{{nickName}}</text>
+      <van-button bindtap="userLogOut" size="small" style="margin-top: 20rpx;">退出</van-button>
+    </view>
+  </view>
+  <view class="mainContent">
+    <view class="mainTitle">
+      <text>我的书影音</text>
+      <text style="color: #333;" wx:if="{{isLogin}}">全部 ></text>
+      <text style="color: #333; font-size: 20rpx;" wx:else bindtap="getUserInfo">登录以查看全部 ></text>
+    </view>
+  </view>
 </view>

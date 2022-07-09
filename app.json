@@ -3,9 +3,11 @@
     "pages/index/index",
     "pages/user/user",
     "pages/list/list",
-    "pages/index/search/search",
-    "pages/index/more/more",
-    "pages/index/detail/detail"
+    "pages/search/search",
+    "pages/more/more",
+    "pages/detail/detail",
+    "pages/collect/collect",
+    "pages/seen/seen"
   ],
   "window": {
     "navigationBarBackgroundColor": "#42bd56",

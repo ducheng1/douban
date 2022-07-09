@@ -1,0 +1,4 @@
+/* components/tabbar/tabbar.wxss */
+.van-tabbar {
+  margin-bottom: 50rpx;
+}

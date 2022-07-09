@@ -1,0 +1,53 @@
+<!--pages/index/detail/detail.wxml-->
+<view class="container">
+  <view class="mainContent">
+    <!-- 节目封面 -->
+    <van-image width="135" height="188" src="{{detail.img}}" radius="10" wx:if="{{!isBook}}"></van-image>
+    <!-- 图书封面 -->
+    <van-image width="135" height="188" src="{{detail.images.medium}}" radius="10" wx:else></van-image>
+    <view class="mainInfo">
+      <!-- 节目名 -->
+      <text style="font-size: 50rpx; font-weight: bold;" wx:if="{{!isBook}}">{{detail.name}}</text>
+      <text style="font-size: 50rpx; font-weight: bold;" wx:else>{{detail.title}}</text>
+      <!-- 节目类型 -->
+      <view class="filmType" wx:if="{{!isBook}}" style="margin-bottom: 40rpx;">
+        <text style="font-size: 26rpx; color: #666;">
+          {{detail.genre}} {{detail.country}}
+          片长{{detail.duration}}
+        </text>
+      </view>
+      <!-- 图书类型 -->
+      <view class="bookType" wx:else style="margin-bottom: 40rpx;">
+        <text style="font-size: 26rpx; color: #666;">
+          {{detail.author}}/{{detail.publisher}}/出版时间：{{detail.pubdate}}
+        </text>
+      </view>
+      <!-- 按钮组 -->
+      <view class="btnGroup">
+        <van-button round color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="add-o" style="margin-right: 20rpx" bindtap="handleCollect">想看</van-button>
+        <van-button round color="linear-gradient(to left, #4bb0ff, #6149f6)" icon="certificate" bindtap="handleSeen">看过</van-button>
+      </view>
+      <!-- 节目评分情况 -->
+      <view style="margin-top: 30rpx;" wx:if="{{detail.rating!='' && !isBook}}">
+        <van-rate allow-half readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{detail.rating/2+0.5}}" style="margin-right: 10rpx;"></van-rate>
+        <text>{{detail.rating}}</text>
+      </view>
+      <!-- 图书评分情况 -->
+      <view style="margin-top: 30rpx;" wx:elif="{{detail.rating.average!='' && isBook}}">
+        <van-rate allow-half readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{detail.rating.average/2+0.5}}" style="margin-right: 10rpx;"></van-rate>
+        <text>{{detail.rating.average}}</text>
+      </view>
+      <text style="color: #666; margin-top: 30rpx;font-size: 20rpx;" wx:else>暂无评分</text>
+    </view>
+  </view>
+  <view class="detailContent" wx:if="{{!isBook}}">
+    <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">简介</view>
+    <text>{{detail.intro}}</text>
+    <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">影人</view>
+    <text wx:for="{{stars}}" wx:key="index">{{item}}</text>
+  </view>
+  <view class="detailContent" wx:else>
+    <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">简介</view>
+    <text>{{summary}}</text>
+  </view>
+</view>

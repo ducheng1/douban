@@ -1,12 +1,13 @@
 /* pages/index/detail/detail.wxss */
 .container {
   width: 100%;
+  padding: 20rpx;
 }
 
 .mainContent {
   display: flex;
   flex-direction: row;
-  padding: 20rpx;
+  /* padding: 20rpx; */
 }
 
 .mainContent .van-image {
@@ -16,4 +17,11 @@
 .mainInfo {
   display: flex;
   flex-direction: column;
+  width: 400rpx;
+}
+
+.detailContent {
+  /* margin-left: 20rpx; */
+  text-align: left;
+  line-height: 50rpx;
 }

@@ -1,0 +1,7 @@
+<!--pages/seen/seen.wxml-->
+<view class="container">
+  <text style="font-size: 24rpx;color: #ccc;">点击星星评分</text>
+  <van-rate size="35" gutter="1" style="margin-bottom: 20rpx;" color="#ffd21e" void-icon="star" void-color="#ccc"></van-rate>
+  <textarea placeholder="写几句评价吧..." class="text"></textarea>
+  <button type="primary" style="width: 95%; margin-top: 40rpx;">确定</button>
+</view>

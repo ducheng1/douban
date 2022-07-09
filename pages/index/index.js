@@ -39,7 +39,7 @@ Page({
    */
   searchOnClick: function () {
     wx.navigateTo({
-      url: 'search/search',
+      url: '../search/search',
     })
   },
   /**
@@ -50,7 +50,7 @@ Page({
     let title = e.currentTarget.dataset.title;
     console.log(id);
     wx.navigateTo({
-      url: 'more/more?id=' + id + '&title=' + title,
+      url: '../more/more?id=' + id + '&title=' + title,
     })
   },
   /**
@@ -60,7 +60,7 @@ Page({
     let item = e.currentTarget.dataset.item;
     // console.log(e.currentTarget.dataset);
     wx.navigateTo({
-      url: 'detail/detail?data=' + JSON.stringify(item),
+      url: '../detail/detail?data=' + JSON.stringify(item),
     })
   },
   /**
@@ -75,4 +75,14 @@ Page({
       frontColor: '#ffffff'
     });
   },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        active: 0,
+      })
+    }
+  }
 })
