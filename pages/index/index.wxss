@@ -21,11 +21,11 @@
 .listItem {
   width: 200rpx;
   margin-top: 20rpx;
-  margin-right: 20rpx;
+  margin-right: 12rpx;
   display: flex;
   flex-direction: column;
   /* border: 1px solid black; */
-  text-align: center;
+  /* text-align: center; */
 }
 
 .listItem:last-child{

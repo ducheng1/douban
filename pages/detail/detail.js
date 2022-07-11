@@ -13,7 +13,7 @@ Page({
     id: 0,
     isLoading: true,
     isExpand: false,
-    length: 0,
+    height: 0,
   },
   /**
    * 事件处理--收藏事件
@@ -55,6 +55,7 @@ Page({
     this.setData({
       isLoading: true
     });
+    let _that = this;
     if (data.type == "图书") {
       wx.request({
         method: "GET",
@@ -87,6 +88,11 @@ Page({
             isBook: false,
             isLoading: false,
           });
+          wx.createSelectorQuery().in(this).select(".introContainer").boundingClientRect().exec(function (res) {
+            _that.setData({
+              height: res[0].height*2/50,
+            })
+          });
         },
         fail: res => {
           console.log(res);
@@ -96,4 +102,5 @@ Page({
   },
   // console.log(typeof data);
   // console.log(data);
+  onReady(e) {},
 })

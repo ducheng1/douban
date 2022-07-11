@@ -47,7 +47,8 @@
       <view class="content {{isExpand?'expand':'collapse'}}">
         <rich-text nodes="{{detail.intro}}"></rich-text>
       </view>
-      <view class="button {{length<88?'hidden':''}}" bindtap="handleExpand">{{isExpand?"收起":"展开"}}</view>
+      <!-- {{height}} -->
+      <view class="button {{height<2?'hidden':''}}" bindtap="handleExpand">{{isExpand?"收起":"展开"}}</view>
     </view>
     <!-- 影人 -->
     <view style="padding: 20rpx 0;font-size:40rpx;font-weight:bold">影人</view>

@@ -1,5 +1,5 @@
 <!--pages/collect/collect.wxml-->
 <view class="container">
   <textarea placeholder="记录一下想看的理由" class="text"></textarea>
-  <button type="primary" style="width: 95%; margin-top: 40rpx;">确定</button>
+  <button type="primary" style="width: 95%; margin-top: 40rpx;" bindtap="handleClick">确定</button>
 </view>

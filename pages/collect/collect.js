@@ -20,7 +20,19 @@ Page({
       frontColor: '#000000',
     });
   },
-
+/** 
+   * 事件处理--按钮点击
+   */
+  handleClick: function () {
+    wx.navigateBack({
+      delta: 0,
+    });
+    wx.showToast({
+      title: '提交成功',
+      icon: "success",
+      duration: 2000,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

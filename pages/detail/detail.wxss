@@ -84,9 +84,13 @@
 }
 
 .collapse {
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
 }
 
 .expand {
   -webkit-line-clamp: 0;
+}
+
+.hidden {
+  display: none;
 }

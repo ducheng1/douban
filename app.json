@@ -14,6 +14,7 @@
     "navigationBarTitleText": "豆瓣评分"
   },
   "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",

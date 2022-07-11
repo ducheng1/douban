@@ -7,10 +7,10 @@
         <!-- 封面图 -->
         <van-image height="135" width="100" src="{{item.img}}" radius="10" lazy-load>
         </van-image>
-        <text>{{item.name}}</text>
+        <text style="text-align: center;font-size: 26rpx;">{{item.name}}</text>
         <!-- 评分展示 -->
         <view wx:if="{{item.rating != ''}}" style="text-align: left;">
-          <van-rate readonly color="#ffd21e" void-color="#eee" value="{{item.rating/2+0.5}}" size="12" gutter="0" allow-half></van-rate>
+          <van-rate readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{item.rating/2+0.5}}" size="12" gutter="0" allow-half></van-rate>
           <text style="font-size: 20rpx; margin-left: 10rpx;color: #666;">{{item.rating}}</text>
         </view>
         <text wx:else style="font-size: 20rpx;margin-top: 10rpx;color: #666;">暂无评分</text>
