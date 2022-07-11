@@ -1,18 +1,21 @@
 <!--pages/index/detail/detail.wxml-->
-<view class="container">
+<view class="container" wx:if="{{!isLoading}}">
   <view class="mainContent">
     <!-- 节目封面 -->
     <van-image width="135" height="188" src="{{detail.img}}" radius="10" wx:if="{{!isBook}}"></van-image>
     <!-- 图书封面 -->
     <van-image width="135" height="188" src="{{detail.images.medium}}" radius="10" wx:else></van-image>
+    <!-- 右侧主要信息 -->
     <view class="mainInfo">
       <!-- 节目名 -->
       <text style="font-size: 50rpx; font-weight: bold;" wx:if="{{!isBook}}">{{detail.name}}</text>
+      <!-- 图书名 -->
       <text style="font-size: 50rpx; font-weight: bold;" wx:else>{{detail.title}}</text>
       <!-- 节目类型 -->
       <view class="filmType" wx:if="{{!isBook}}" style="margin-bottom: 40rpx;">
         <text style="font-size: 26rpx; color: #666;">
-          {{detail.genre}} {{detail.country}}
+          <text wx:for="{{genre}}" wx:key="index">{{item}}</text> /
+          <text wx:for="{{country}}" wx:key="index">{{item}}</text> / 
           片长{{detail.duration}}
         </text>
       </view>
@@ -50,4 +53,7 @@
     <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">简介</view>
     <text>{{summary}}</text>
   </view>
+</view>
+<view wx:else class="loading">
+  <van-loading color="#42bd56" size="24px" vertical>加载中...</van-loading>
 </view>

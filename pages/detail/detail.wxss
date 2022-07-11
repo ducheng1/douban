@@ -25,3 +25,11 @@
   text-align: left;
   line-height: 50rpx;
 }
+
+.loading {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

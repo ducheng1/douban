@@ -19,7 +19,8 @@
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-button": "@vant/weapp/button/index",
     "van-image": "@vant/weapp/image/index",
-    "van-rate": "@vant/weapp/rate/index"
+    "van-rate": "@vant/weapp/rate/index",
+    "van-loading": "@vant/weapp/loading/index"
   },
   "tabBar": {
     "list": [{

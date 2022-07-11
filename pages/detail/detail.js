@@ -5,10 +5,13 @@ Page({
    */
   data: {
     detail: {},
+    genre: [],
+    country: [],
     stars: {},
     isBook: false,
     summary: "",
     id: 0,
+    isLoading: true,
   },
   /**
    * 事件处理--收藏事件
@@ -40,6 +43,9 @@ Page({
       frontColor: '#000000',
     });
     // console.log(e.data);
+    this.setData({
+      isLoading: true
+    });
     if (data.type == "图书") {
       wx.request({
         method: "GET",
@@ -49,7 +55,8 @@ Page({
           this.setData({
             detail: res.data,
             summary: res.data.summary.replace(/<\/?.+?>/g, "").replace(/ /g, ""),
-            isBook: true
+            isBook: true,
+            isLoading: false
           });
         },
         fail: res => {
@@ -61,11 +68,14 @@ Page({
         method: "GET",
         url: 'http://api.yuanzhangzcc.com:89/movies/' + data.sid,
         success: res => {
-          // console.log(res);
+          console.log(res);
           this.setData({
             detail: res.data,
+            country: res.data.country.split("/"),
+            genre: res.data.genre.split("/"),
             stars: res.data.actor.split("/"),
-            isBook: false
+            isBook: false,
+            isLoading: false
           });
         },
         fail: res => {
@@ -73,10 +83,7 @@ Page({
         }
       });
     };
-    // this.setData({
-    //   detail: data,
-    // });
-    // console.log(typeof data);
-    // console.log(data);
   },
+  // console.log(typeof data);
+  // conso
 })
