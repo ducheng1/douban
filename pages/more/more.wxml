@@ -9,11 +9,11 @@
         </van-image>
         <text style="text-align: center;font-size: 26rpx;">{{item.name}}</text>
         <!-- 评分展示 -->
-        <view wx:if="{{item.rating != ''}}" style="text-align: center;">
+        <view wx:if="{{item.rating != ''}}">
           <van-rate readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{item.rating/2+0.5}}" size="12" gutter="0" allow-half></van-rate>
-          <text style="font-size: 20rpx; margin-left: 10rpx;color: #666;">{{item.rating}}</text>
+          <text style="font-size: 20rpx; color: #666;">{{item.rating}}</text>
         </view>
-        <text wx:else style="font-size: 20rpx;margin-top: 10rpx;color: #666;text-align: center;">暂无评分</text>
+        <text wx:else style="font-size: 20rpx; color: #666;">暂无评分</text>
       </view>
     </van-grid-item>
   </van-grid>

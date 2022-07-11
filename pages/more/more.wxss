@@ -2,7 +2,9 @@
 .more_itemList {
   display: flex;
   flex-direction: column;
-  height: 380rpx;
+  height: 350rpx;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .more_itemList text {
