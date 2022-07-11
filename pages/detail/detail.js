@@ -67,7 +67,6 @@ Page({
             summary: res.data.summary.replace(/<\/?.+?>/g, "").replace(/ /g, ""),
             isBook: true,
             isLoading: false,
-            length: res.data.summary.replace(/<\/?.+?>/g, "").replace(/ /g, "").length,
           });
         },
         fail: res => {

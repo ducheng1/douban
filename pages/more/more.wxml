@@ -1,7 +1,7 @@
 <!--pages/index/more/more.wxml-->
 <view class="more_container">
   <van-grid column-num="3" border="false">
-    <van-grid-item wx:for="{{list}}" wx:for-item="item" wx:key="index" use-slot >
+    <van-grid-item wx:for="{{list}}" wx:for-item="item" wx:key="index" use-slot>
       <!-- 列表 -->
       <view class="more_itemList" data-item="{{item}}" bindtap="detailHandler">
         <!-- 封面图 -->
@@ -9,11 +9,11 @@
         </van-image>
         <text style="text-align: center;font-size: 26rpx;">{{item.name}}</text>
         <!-- 评分展示 -->
-        <view wx:if="{{item.rating != ''}}" style="text-align: left;">
+        <view wx:if="{{item.rating != ''}}" style="text-align: center;">
           <van-rate readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{item.rating/2+0.5}}" size="12" gutter="0" allow-half></van-rate>
           <text style="font-size: 20rpx; margin-left: 10rpx;color: #666;">{{item.rating}}</text>
         </view>
-        <text wx:else style="font-size: 20rpx;margin-top: 10rpx;color: #666;">暂无评分</text>
+        <text wx:else style="font-size: 20rpx;margin-top: 10rpx;color: #666;text-align: center;">暂无评分</text>
       </view>
     </van-grid-item>
   </van-grid>
