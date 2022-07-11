@@ -13,7 +13,7 @@
           <van-rate readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{item.rating/2+0.5}}" size="12" gutter="0" allow-half></van-rate>
           <text style="font-size: 20rpx; color: #666;">{{item.rating}}</text>
         </view>
-        <text wx:else style="font-size: 20rpx; color: #666;">暂无评分</text>
+        <text wx:else style="font-size: 20rpx; color: #666;text-align: center;">暂无评分</text>
       </view>
     </van-grid-item>
   </van-grid>
