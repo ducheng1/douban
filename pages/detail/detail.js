@@ -12,6 +12,8 @@ Page({
     summary: "",
     id: 0,
     isLoading: true,
+    isExpand: false,
+    length: 0,
   },
   /**
    * 事件处理--收藏事件
@@ -30,6 +32,14 @@ Page({
     })
   },
   /**
+   * 事件处理--展开收起按钮
+   */
+  handleExpand: function () {
+    this.setData({
+      isExpand: !this.data.isExpand,
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad(e) {
@@ -42,7 +52,6 @@ Page({
       backgroundColor: '#ffffff',
       frontColor: '#000000',
     });
-    // console.log(e.data);
     this.setData({
       isLoading: true
     });
@@ -56,7 +65,8 @@ Page({
             detail: res.data,
             summary: res.data.summary.replace(/<\/?.+?>/g, "").replace(/ /g, ""),
             isBook: true,
-            isLoading: false
+            isLoading: false,
+            length: res.data.summary.replace(/<\/?.+?>/g, "").replace(/ /g, "").length,
           });
         },
         fail: res => {
@@ -68,14 +78,14 @@ Page({
         method: "GET",
         url: 'http://api.yuanzhangzcc.com:89/movies/' + data.sid,
         success: res => {
-          console.log(res);
+          // console.log(res);
           this.setData({
             detail: res.data,
             country: res.data.country.split("/"),
             genre: res.data.genre.split("/"),
             stars: res.data.actor.split("/"),
             isBook: false,
-            isLoading: false
+            isLoading: false,
           });
         },
         fail: res => {
@@ -85,5 +95,5 @@ Page({
     };
   },
   // console.log(typeof data);
-  // conso
+  // console.log(data);
 })

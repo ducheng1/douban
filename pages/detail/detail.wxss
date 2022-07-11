@@ -17,6 +17,7 @@
 .mainInfo {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 400rpx;
 }
 
@@ -26,10 +27,66 @@
   line-height: 50rpx;
 }
 
+/* 加载 */
+
 .loading {
   height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* 影人 */
+
+.workersContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.workersContainer .director {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+}
+
+.workersContainer .star {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+}
+
+.workersContainer .star:last-child {
+  margin-right: 0;
+}
+
+.workersContainer .name {
+  font-size: 28rpx;
+  height: 50rpx;
+  overflow: hidden;
+  width: 200rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 简介文字展开与收起 */
+.introContainer .content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.introContainer .button {
+  text-align: right;
+  color: darkgray;
+}
+
+.collapse {
+  -webkit-line-clamp: 4;
+}
+
+.expand {
+  -webkit-line-clamp: 0;
 }

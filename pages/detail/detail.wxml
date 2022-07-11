@@ -12,46 +12,69 @@
       <!-- 图书名 -->
       <text style="font-size: 50rpx; font-weight: bold;" wx:else>{{detail.title}}</text>
       <!-- 节目类型 -->
-      <view class="filmType" wx:if="{{!isBook}}" style="margin-bottom: 40rpx;">
-        <text style="font-size: 26rpx; color: #666;">
-          <text wx:for="{{genre}}" wx:key="index">{{item}}</text> /
-          <text wx:for="{{country}}" wx:key="index">{{item}}</text> / 
-          片长{{detail.duration}}
-        </text>
+      <view class="filmType" wx:if="{{!isBook}}" style="font-size: 26rpx; color: #666;">
+        {{genre}} / {{country}} / 片长{{detail.duration}}
       </view>
       <!-- 图书类型 -->
-      <view class="bookType" wx:else style="margin-bottom: 40rpx;">
+      <view class="bookType" wx:else>
         <text style="font-size: 26rpx; color: #666;">
-          {{detail.author}}/{{detail.publisher}}/出版时间：{{detail.pubdate}}
+          {{detail.author}} / {{detail.publisher}} / 出版时间：{{detail.pubdate}}
         </text>
       </view>
       <!-- 按钮组 -->
-      <view class="btnGroup">
+      <view class="btnGroup" style="height: 20%;">
         <van-button round color="linear-gradient(to right, #4bb0ff, #6149f6)" icon="add-o" style="margin-right: 20rpx" bindtap="handleCollect">想看</van-button>
         <van-button round color="linear-gradient(to left, #4bb0ff, #6149f6)" icon="certificate" bindtap="handleSeen">看过</van-button>
       </view>
       <!-- 节目评分情况 -->
-      <view style="margin-top: 30rpx;" wx:if="{{detail.rating!='' && !isBook}}">
+      <view wx:if="{{detail.rating!='' && !isBook}}">
         <van-rate allow-half readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{detail.rating/2+0.5}}" style="margin-right: 10rpx;"></van-rate>
         <text>{{detail.rating}}</text>
       </view>
       <!-- 图书评分情况 -->
-      <view style="margin-top: 30rpx;" wx:elif="{{detail.rating.average!='' && isBook}}">
+      <view wx:elif="{{detail.rating.average!='' && isBook}}">
         <van-rate allow-half readonly color="#ffd21e" void-icon="star" void-color="#eee" value="{{detail.rating.average/2+0.5}}" style="margin-right: 10rpx;"></van-rate>
         <text>{{detail.rating.average}}</text>
       </view>
-      <text style="color: #666; margin-top: 30rpx;font-size: 20rpx;" wx:else>暂无评分</text>
+      <text style="color: #666; font-size: 20rpx;" wx:else>暂无评分</text>
     </view>
   </view>
+  <!-- 详情内容 -->
   <view class="detailContent" wx:if="{{!isBook}}">
-    <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">简介</view>
-    <text>{{detail.intro}}</text>
-    <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">影人</view>
-    <text wx:for="{{stars}}" wx:key="index">{{item}}</text>
+    <view style="padding: 20rpx 0;font-size: 40rpx;font-weight: bold;">简介</view>
+    <!-- 简介 -->
+    <view class="introContainer">
+      <view class="content {{isExpand?'expand':'collapse'}}">
+        <rich-text nodes="{{detail.intro}}"></rich-text>
+      </view>
+      <view class="button {{length<88?'hidden':''}}" bindtap="handleExpand">{{isExpand?"收起":"展开"}}</view>
+    </view>
+    <!-- 影人 -->
+    <view style="padding: 20rpx 0;font-size:40rpx;font-weight:bold">影人</view>
+    <!-- 演员 -->
+    <view class="workersContainer">
+      <view class="director">
+        <van-image width="100" height="140"></van-image>
+        <text class="name">{{detail.director}}</text>
+        <text style="font-size: 26rpx; color: #777; margin-top: -10rpx;">导演</text>
+      </view>
+      <view class="star" wx:for="{{stars}}" wx:key="index">
+        <van-image width="100" height="140"></van-image>
+        <text class="name">{{item}}</text>
+        <text style="font-size: 26rpx; color: #777; margin-top: -10rpx;">演员</text>
+      </view>
+    </view>
   </view>
+  <!-- 图书简介 -->
   <view class="detailContent" wx:else>
     <view style="padding:20rpx 0;font-size:40rpx;font-weight:bold">简介</view>
-    <text>{{summary}}</text>
+    <!-- 简介 -->
+    <view class="introContainer">
+      <view class="content {{isExpand?'expand':'collapse'}}">
+        <rich-text nodes="{{summary}}"></rich-text>
+      </view>
+      <view class="button" bindtap="handleExpand">{{isExpand?"收起":"展开"}}</view>
+    </view>
   </view>
 </view>
 <view wx:else class="loading">
